@@ -17,7 +17,7 @@ class DevelopmentConfig(Config):
 
 
 @dataclass
-class TestingConfig(Config):
+class CIConfig(Config):
     DEBUG: bool = False
     TESTING: bool = True
     SQLALCHEMY_DATABASE_URI: str = "sqlite:///:memory:"
@@ -31,7 +31,7 @@ class ProductionConfig(Config):
 
 _configs = {
     "development": DevelopmentConfig,
-    "testing": TestingConfig,
+    "testing": CIConfig,
     "production": ProductionConfig,
 }
 
