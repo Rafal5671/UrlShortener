@@ -27,6 +27,8 @@ def _load_config(app: Flask, config: Config) -> None:
 def _init_extensions(app: Flask) -> None:
     db.init_app(app)
     with app.app_context():
+        from app.models import ShortURL
+
         db.create_all()
 
 
